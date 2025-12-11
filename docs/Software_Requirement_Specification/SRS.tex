@@ -25,6 +25,8 @@ SUAS Flight Path Visualization}
 \hline
 1.0 & Snapshot 1 & First draft of requirements and basic scope. \\
 \hline
+2.0 & Snapshot 2 & Added more details for features and UI. \\
+\hline
 \end{tabular}
 
 \section{Introduction}
@@ -53,6 +55,14 @@ The system is a simple planning tool that runs in a web browser. A user can see
 a map or basic 3D terrain, draw a path for a drone, and make changes until the
 path looks good for the mission.
 
+\subsection*{Who Uses It}
+
+\begin{itemize}
+  \item Students and developers who are working on or demoing the project.
+  \item Instructors or sponsors who want to see example flight paths.
+  \item Anyone using it for basic mission planning practice.
+\end{itemize}
+
 \section{Functional Requirements}
 
 The system should be able to do at least the following:
@@ -61,9 +71,21 @@ The system should be able to do at least the following:
   \item Let the user create a flight path by clicking on the map to add points.
   \item Let the user move or delete points on the path.
   \item Show the path on a 2D map.
+  \item Provide a simple 3D view of the terrain and the path.
+  \item Show basic info like total distance and an estimated flight time.
+  \item Allow the user to save a mission (flight path with a name).
 \end{itemize}
 
 These requirements are enough for a basic working demo. Extra features can be
 added later if there is time.
+
+\section{Non-Functional Requirements }
+
+\subsection*{Performance}
+
+\begin{itemize}
+  \item The map should respond in a reasonable time when the user pans or zooms.
+  \item Loading a saved mission should not take too long for normal-sized paths.
+\end{itemize}
 
 \end{document}

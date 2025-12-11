@@ -15,6 +15,7 @@ SUAS Flight Path Visualization}
   Kent Stark
 }
 
+
 \begin{document}
 \maketitle
 
@@ -24,6 +25,8 @@ SUAS Flight Path Visualization}
 \textbf{Version} & \textbf{Date} & \textbf{Description} \\
 \hline
 1.0 & Snapshot 1 & Initial draft. \\
+\hline
+2.0 & Snapshot 2 & Added frontend / backend \\
 \hline
 \end{tabular}
 
@@ -47,5 +50,59 @@ risk in mind.
   \item GitHub Repository: \href{https://github.com/lbanue11/CS3338-group18}{CS3338-group18}.
 \end{itemize}
 
+\section{System Overview}
+
+At a high level, the system has three main parts:
+\begin{itemize}
+  \item \textbf{Frontend Web UI} -- Runs in the browser, shows the map and 3D
+        view, lets the user draw and edit flight paths.
+  \item \textbf{Backend Service} -- Exposes APIs to save and load missions,
+        compute simple path metrics, and prepare data for visualization.
+  \item \textbf{Data Layer} -- Stores user missions, terrain references, and
+        drone / sensor presets.
+\end{itemize}
+
+The frontend talks to the backend over HTTP using JSON. The backend reads and
+writes data in the storage layer and returns results to the UI.
+
+\section{Architectural Design}
+
+\subsection{Frontend (Client)}
+
+\begin{itemize}
+  \item Single–page application rendered in the browser.
+  \item Uses a map/3D library (e.g., Mapbox and/or three.js) to show terrain and
+        paths.
+  \item Handles user input: adding, moving, and deleting waypoints; switching
+        between 2D and 3D views; starting simulations.
+  \item Calls backend REST endpoints to load and save missions.
+\end{itemize}
+
+\subsection{Backend (Server)}
+
+\begin{itemize}
+  \item Simple web API (e.g., Node.js/Express).
+  \item Endpoints for:
+        \begin{itemize}
+          \item Creating and updating flight paths.
+          \item Listing and loading saved missions.
+          \item Returning basic analytics (total distance, estimated duration,
+                simple risk score).
+        \end{itemize}
+  \item Performs input validation and basic business logic.
+\end{itemize}
+
+\subsection{Data Storage}
+
+\begin{itemize}
+  \item Stores missions as documents or rows with:
+        \begin{itemize}
+          \item Mission metadata (name, date, owner).
+          \item List of waypoints (lat, lon, altitude).
+          \item Selected drone type and terrain scenario.
+        \end{itemize}
+  \item Storage can be a lightweight database or JSON files, depending on
+        the deployment.
+\end{itemize}
 
 \end{document}
