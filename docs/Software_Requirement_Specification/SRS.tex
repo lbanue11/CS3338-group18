@@ -15,6 +15,7 @@ SUAS Flight Path Visualization}
   Kent Stark
 }
 
+
 \begin{document}
 \maketitle
 
@@ -28,6 +29,8 @@ SUAS Flight Path Visualization}
 2.0 & Snapshot 2 & Added more details for features and UI. \\
 \hline
 3.0 & Snapshot 3 & Cleaned up requirements and added a few notes. \\
+\hline
+4.0 & Snapshot 4 & Final edits \\
 \hline
 \end{tabular}
 
@@ -108,6 +111,22 @@ added later if there is time.
   \item New users should be able to figure out how to add and move points on
         the map with minimal instructions.
   \item The main controls (create, save, load, delete) should be easy to find.
+\end{itemize}
+
+\subsection*{Safety and Scope}
+
+\begin{itemize}
+  \item The system is only for planning and visualization.
+  \item It does not control real drones or send real commands.
+\end{itemize}
+
+\subsection*{Security}
+
+\begin{itemize}
+  \item If user accounts are used, only logged-in users should see their own
+        saved missions.
+  \item Communication between browser and server should use normal secure
+        web traffic (HTTPS) when possible.
 \end{itemize}
 
 \end{document}
