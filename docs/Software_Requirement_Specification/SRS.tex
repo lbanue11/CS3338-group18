@@ -27,6 +27,8 @@ SUAS Flight Path Visualization}
 \hline
 2.0 & Snapshot 2 & Added more details for features and UI. \\
 \hline
+3.0 & Snapshot 3 & Cleaned up requirements and added a few notes. \\
+\hline
 \end{tabular}
 
 \section{Introduction}
@@ -63,6 +65,14 @@ path looks good for the mission.
   \item Anyone using it for basic mission planning practice.
 \end{itemize}
 
+\subsection*{Where It Runs}
+
+\begin{itemize}
+  \item Desktop or laptop computer.
+  \item Modern web browser (Chrome, Firefox, Edge).
+  \item Internet connection so maps and data can load.
+\end{itemize}
+
 \section{Functional Requirements}
 
 The system should be able to do at least the following:
@@ -74,6 +84,10 @@ The system should be able to do at least the following:
   \item Provide a simple 3D view of the terrain and the path.
   \item Show basic info like total distance and an estimated flight time.
   \item Allow the user to save a mission (flight path with a name).
+  \item Allow the user to load a previously saved mission.
+  \item Let the user pick a drone type or preset for the mission.
+  \item Show some kind of simple “risk” or “attention” indicator along the path
+        (for example, color changes on certain segments).
 \end{itemize}
 
 These requirements are enough for a basic working demo. Extra features can be
@@ -86,6 +100,14 @@ added later if there is time.
 \begin{itemize}
   \item The map should respond in a reasonable time when the user pans or zooms.
   \item Loading a saved mission should not take too long for normal-sized paths.
+\end{itemize}
+
+\subsection*{Usability}
+
+\begin{itemize}
+  \item New users should be able to figure out how to add and move points on
+        the map with minimal instructions.
+  \item The main controls (create, save, load, delete) should be easy to find.
 \end{itemize}
 
 \end{document}

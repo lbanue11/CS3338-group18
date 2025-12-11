@@ -28,6 +28,8 @@ SUAS Flight Path Visualization}
 \hline
 2.0 & Snapshot 2 & Added frontend / backend \\
 \hline
+3.0 & Snapshot 3 & Added user interface overview and terrain / path features. \\
+\hline
 \end{tabular}
 
 \section{Introduction}
@@ -103,6 +105,47 @@ writes data in the storage layer and returns results to the UI.
         \end{itemize}
   \item Storage can be a lightweight database or JSON files, depending on
         the deployment.
+\end{itemize}
+
+\section{Major Components}
+
+\subsection{Map \& Terrain Viewer}
+\begin{itemize}
+  \item Shows basemap tiles and 3D buildings / terrain.
+  \item Displays the current flight path as a line connecting waypoints.
+\end{itemize}
+
+\subsection{Flight Path Editor}
+\begin{itemize}
+  \item Lets the user add, drag, and delete waypoints.
+  \item Updates altitude and other simple parameters for each point.
+\end{itemize}
+
+\subsection{Simulation \& Metrics}
+\begin{itemize}
+  \item Animates the drone along the path.
+  \item Computes basic metrics (distance, time, altitude profile).
+  \item Can highlight segments with higher detection risk using colors.
+\end{itemize}
+
+\subsection{Mission Manager}
+\begin{itemize}
+  \item Save, load, and delete missions.
+  \item Lists existing missions for quick reuse.
+\end{itemize}
+
+\section{User Interface Overview}
+
+Main screens:
+
+\begin{itemize}
+  \item \textbf{Login / Landing} (optional) – simple entry point to the tool.
+  \item \textbf{Mission Dashboard} – list of saved missions and button to
+        create a new one.
+  \item \textbf{Map View} – central screen with the map/3D view, path editor
+        tools, and info panel.
+  \item \textbf{Results Panel} – shows summary metrics and basic risk
+        information for the current path.
 \end{itemize}
 
 \end{document}
