@@ -1,0 +1,126 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{setspace}
+\setstretch{1.15}
+
+\title{Design Specifications\\[0.5em]
+SUAS Flight Path Visualization}
+\author{
+  Leo Banuelos \and
+  Eddie Echegoyen \and
+  Jeffrey Li \and
+  Kent Stark
+}
+
+\begin{document}
+\maketitle
+
+\section{Overview}
+
+This document is a simple design spec for the SUAS Flight Path Visualization
+project. It lists the main pages, parts, tools, and the basic stuff that would
+go into a Docker container to run the project.
+
+\section{Pages / Screens}
+
+\subsection*{1. Landing / Login Page}
+\begin{itemize}
+  \item Simple welcome text.
+  \item Username / password fields (or placeholder for login).
+  \item Button to enter the main app.
+\end{itemize}
+
+\subsection*{2. Mission Dashboard}
+\begin{itemize}
+  \item List of saved missions (name, date).
+  \item Button to create a new mission.
+  \item Button to open or delete a mission.
+\end{itemize}
+
+\subsection*{3. Map / 3D View Page}
+\begin{itemize}
+  \item 2D map view with terrain.
+  \item 3D view toggle for terrain visualization.
+  \item Tools to add, move, and delete waypoints.
+  \item Display of current path (lines between waypoints).
+\end{itemize}
+
+\subsection*{4. Mission Info Panel}
+\begin{itemize}
+  \item Name and short description of the mission.
+  \item Total distance and simple time estimate.
+  \item Selected drone type.
+  \item Simple risk indicator (for example: low / medium / high).
+\end{itemize}
+
+\subsection*{5. Settings / About}
+\begin{itemize}
+  \item Basic app information.
+  \item Links to Jira board and GitHub repo.
+\end{itemize}
+
+\section{Main Parts of the System}
+
+\subsection*{Frontend}
+\begin{itemize}
+  \item Single-page web app.
+  \item Handles all user interaction.
+  \item Renders the map and 3D view.
+\end{itemize}
+
+\subsection*{Backend}
+\begin{itemize}
+  \item Simple web API (HTTP + JSON).
+  \item Endpoints to save and load missions.
+  \item Stores and returns mission data.
+\end{itemize}
+
+\subsection*{Data Storage}
+\begin{itemize}
+  \item Missions with ID, name, description, date.
+  \item List of waypoints (latitude, longitude, altitude).
+  \item Optional table / collection for drone presets.
+\end{itemize}
+
+\section{Tools, Packages, and Libraries}
+
+\subsection*{Frontend Libraries}
+\begin{itemize}
+  \item React (for UI).
+  \item Mapbox GL JS (map view).
+  \item three.js (3D visualization).
+  \item Turf.js (simple geometry / distance helpers).
+\end{itemize}
+
+\subsection*{Backend / General}
+\begin{itemize}
+  \item Node.js
+  \item npm (package manager)
+  \item Express (basic web server / API)
+\end{itemize}
+
+\subsection*{Development Tools}
+\begin{itemize}
+  \item Git and GitHub for version control.
+  \item Jira for task tracking.
+\end{itemize}
+
+\section{Docker Container Contents}
+
+If we put this project in a Docker container, it would roughly need:
+
+\begin{itemize}
+  \item Base image: \texttt{node:lts} (Node.js + npm).
+  \item System packages required by map / 3D libraries (as needed).
+  \item Project source code (frontend and backend).
+  \item \texttt{package.json} with all npm dependencies.
+  \item Build step for frontend (for example: \texttt{npm run build}).
+  \item Command to start the backend server (for example: \texttt{npm start}).
+\end{itemize}
+
+This list is enough for a basic setup. Extra tools or services can be added
+later if needed.
+
+\end{document}
