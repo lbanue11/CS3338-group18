@@ -1,0 +1,120 @@
+\documentclass[12pt]{article}
+
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{longtable}
+\usepackage{hyperref}
+\usepackage{enumitem}
+
+\geometry{letterpaper, margin=1in}
+\setstretch{1.2}
+
+\title{
+Snapshot 2 TestRail Report \\
+\large SUAS Flight Path Visualization Project
+}
+\author{Eddie Echegoyen}
+\date{December 12, 2025}
+
+\begin{document}
+
+\maketitle
+
+\section{Overview}
+
+This document summarizes the TestRail execution results for \textbf{Snapshot 2}, taken directly from the official TestRail PDF export \cite{testrail2}.  
+Snapshot 2 focuses on early mission workflow validation including waypoint editing, map rendering, and basic simulation behavior.
+
+The run consists of \textbf{9 total test cases}. Based on the TestRail results, \textbf{8 tests passed} and \textbf{1 test failed}, resulting in an overall pass rate of \textbf{89\%}.
+
+\section{Summary of Results}
+
+\subsection{Overall Statistics}
+
+\begin{itemize}
+    \item \textbf{Total Test Cases:} 9
+    \item \textbf{Passed:} 8 (89\%)
+    \item \textbf{Failed:} 1 (11\%)
+    \item \textbf{Blocked:} 0
+    \item \textbf{Skipped:} 0
+    \item \textbf{Automated:} 0
+\end{itemize}
+
+\subsection{Failure Summary}
+
+The single failed test case was:
+
+\begin{quote}
+\textbf{Save a mission} — Users could not save missions, causing this test to fail the run.
+\end{quote}
+
+This indicates the backend mission storage endpoint was either incomplete or malfunctioning during Snapshot 2.
+
+\section{Activity Log}
+
+The following activity was recorded (12/11/2025–12/12/2025):
+
+\begin{itemize}
+    \item \textbf{Passed} — Metrics calculate correctly
+    \item \textbf{Passed} — Simulation animation begins
+    \item \textbf{Passed} — Load an existing mission
+    \item \textbf{Failed} — Save a mission
+    \item \textbf{Passed} — User can delete a waypoint
+    \item \textbf{Passed} — User can drag/move a waypoint
+    \item \textbf{Passed} — TC-203: User can add a waypoint
+    \item \textbf{Passed} — TC-202: Waypoints display correctly on map
+    \item \textbf{Passed} — Suite: Frontend – Map \& Terrain Viewer
+\end{itemize}
+
+\section{Progress and Completion}
+
+\begin{itemize}
+    \item \textbf{Completion:} 100\% (9/9 tests)
+    \item \textbf{Elapsed Time:} 0 hr 0 min
+    \item \textbf{Remaining Tests:} 0
+    \item \textbf{Tests per day:} 9
+\end{itemize}
+
+The test run was started on December 11, 2025 and finished early on December 12, 2025.
+
+\section{Detailed Test Case Results}
+
+\begin{longtable}{|p{1.5cm}|p{10cm}|p{2cm}|}
+\hline
+\textbf{ID} & \textbf{Title} & \textbf{Status} \\
+\hline
+T128 & Suite: Frontend – Map \& Terrain Viewer & Passed \\
+\hline
+T129 & TC-202: Waypoints display correctly on map & Passed \\
+\hline
+T130 & TC-203: User can add a waypoint & Passed \\
+\hline
+T131 & User can drag/move a waypoint & Passed \\
+\hline
+T132 & User can delete a waypoint & Passed \\
+\hline
+T133 & Save a mission & \textbf{Failed} \\
+\hline
+T134 & Load an existing mission & Passed \\
+\hline
+T135 & Simulation animation begins & Passed \\
+\hline
+T136 & Metrics calculate correctly & Passed \\
+\hline
+\caption{Snapshot 2 – Test Case Results Summary}
+\end{longtable}
+
+\section{Conclusion}
+
+Snapshot 2 test execution completed with a strong pass rate of 89\%.  
+All core waypoint and simulation features functioned correctly. The only failure occurred when attempting to save missions, which prevented persistence of mission data. This issue was forwarded to development for correction in Snapshot 3.
+
+Aside from this defect, system behavior aligned with expected functionality for this stage of development.
+
+\begin{thebibliography}{9}
+\bibitem{testrail2}
+TestRail Summary Report, Snapshot 2 Test Run, exported on 12/12/2025. \\
+Source File: \textit{testrail-report-9.pdf}.
+\end{thebibliography}
+
+\end{document}
