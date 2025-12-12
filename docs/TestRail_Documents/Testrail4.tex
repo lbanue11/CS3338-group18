@@ -1,0 +1,107 @@
+\documentclass[12pt]{article}
+
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{longtable}
+
+\geometry{letterpaper, margin=1in}
+\setstretch{1.2}
+
+\title{
+Snapshot 4 TestRail Report \\
+\large SUAS Flight Path Visualization Project
+}
+\author{Eddie Echegoyen}
+\date{December 11, 2025}
+
+\begin{document}
+
+\maketitle
+
+\section{Overview}
+
+This document summarizes the results of the Snapshot 4 TestRail execution for the SUAS Flight Path Visualization project. All test data was taken directly from the TestRail export. The purpose of this final test run was to validate the stability, correctness, and integration of all features implemented across Snapshots 1 through 4.  
+\\
+
+The TestRail report indicates the overall pass/fail rates, activity log, and detailed results for each test case included in the run.  
+(Report Source: TestRail PDF Export) \cite{testrailreport}
+
+\section{Summary of Results}
+
+\subsection{Overall Statistics}
+
+\begin{itemize}
+    \item \textbf{Total Test Cases:} 6
+    \item \textbf{Passed:} 5 (83\%)
+    \item \textbf{Failed:} 1 (17\%)
+    \item \textbf{Blocked:} 0
+    \item \textbf{Skipped:} 0
+    \item \textbf{Automated:} 0
+\end{itemize}
+
+\subsection{Failure Summary}
+The failed test case was related to system stress when processing more than 25 waypoints:
+
+\begin{quote}
+\textit{``The defect for the stress test was after 25+ waypoints, the system started to show signs of minor bugs such as screen glitches and minor miscalculations.''}
+\end{quote}
+
+\section{Activity Log}
+
+\noindent Extracted from TestRail activity (12/08/2025–12/11/2025):
+
+\begin{itemize}
+    \item Passed — TC-406: Settings panel loads correctly
+    \item Failed — TC-404: Stress test – 25+ waypoints
+    \item Passed — TC-403: Final integration test – save → load → simulate workflow
+    \item Passed — TC-405: Error handling – invalid API response
+    \item Passed — TC-402: Regression test – editing waypoint updates all metrics
+    \item Passed — TC-401: UI layout consistency after final polishing
+\end{itemize}
+
+\section{Progress and Completion}
+
+\begin{itemize}
+    \item \textbf{100\% of tests completed}.  
+    \item \textbf{Elapsed Time:} 0 hr 0 min (TestRail calculation)  
+    \item \textbf{Remaining Tests:} 0  
+\end{itemize}
+
+The test run was started and completed on 12/11/2025.
+
+\section{Detailed Test Case Results}
+
+\begin{longtable}{|p{1.5cm}|p{10cm}|p{2cm}|}
+\hline
+\textbf{ID} & \textbf{Title} & \textbf{Status} \\
+\hline
+T144 & TC-401: UI layout consistency after final polishing & Passed \\
+\hline
+T145 & TC-402: Regression test – editing waypoint updates all metrics & Passed \\
+\hline
+T146 & TC-403: Final integration test – save → load → simulate workflow & Passed \\
+\hline
+T147 & TC-404: Stress test – 25+ waypoints & Failed \\
+\hline
+T148 & TC-405: Error handling – invalid API response & Passed \\
+\hline
+T149 & TC-406: Settings panel loads correctly & Passed \\
+\hline
+\caption{Snapshot 4 – Test Case Results Summary}
+\end{longtable}
+
+\section{Conclusion}
+
+The final Snapshot 4 test run shows that the SUAS Flight Path Visualization system is stable and functional, with 83\% of tests passing. The only failure occurred during the stress test involving more than 25 waypoints, resulting in minor graphical glitches and metric miscalculations. These issues have been recorded as future work items.  
+
+Overall, the system satisfies the core requirements and delivers a complete integrated workflow for mission visualization, editing, and terrain analysis.
+
+\begin{thebibliography}{9}
+\bibitem{testrailreport}
+TestRail Summary Report, Snapshot 4 Test Run, exported on 12/11/2025. \\
+Reference Data Source: \textit{testrail-report-7 (3) (1).pdf} \cite{testrailreportinternal}
+\end{thebibliography}
+
+\end{document}

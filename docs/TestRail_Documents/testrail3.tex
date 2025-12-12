@@ -1,0 +1,101 @@
+\documentclass[12pt]{article}
+
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{longtable}
+
+\geometry{letterpaper, margin=1in}
+\setstretch{1.2}
+
+\title{
+Snapshot 3 TestRail Report \\
+\large SUAS Flight Path Visualization Project
+}
+\author{Eddie Echegoyen}
+\date{December 11, 2025}
+
+\begin{document}
+
+\maketitle
+
+\section{Overview}
+
+This document summarizes the Snapshot 3 TestRail report, specifically the test run titled \textbf{``Terrain \& Path Visualization''}. The results shown here were extracted directly from the TestRail PDF report \cite{testrail3}.  
+\\
+
+Snapshot 3 focused on testing the new terrain visualization features, elevation profiling, metrics updates, risk highlighting, and UI behavior. All 7 test cases in this run were successfully passed.
+
+\section{Summary of Results}
+
+\subsection{Overall Statistics}
+
+\begin{itemize}
+    \item \textbf{Total Test Cases:} 7
+    \item \textbf{Passed:} 7 (100\%)
+    \item \textbf{Failed:} 0
+    \item \textbf{Blocked:} 0
+    \item \textbf{Skipped:} 0
+    \item \textbf{Automated:} 0
+\end{itemize}
+
+\subsection{Completion}
+\begin{itemize}
+    \item \textbf{100\% of tests completed}
+    \item \textbf{Elapsed Time:} 0 hr 0 min
+    \item \textbf{Remaining Tests:} 0
+\end{itemize}
+
+The run was executed between 12/08/2025–12/11/2025.
+
+\section{Activity Log}
+
+The following test execution activities were recorded on December 11, 2025:
+
+\begin{itemize}
+    \item Passed — TC-307: API call for risk scoring returns structured and accurate data
+    \item Passed — Terrain data returns correct elevation values from backend
+    \item Passed — UI metrics update on path change
+    \item Passed — TC-304: Toggle between 2D and 3D view
+    \item Passed — TC-303: Risk segments are colored correctly
+    \item Passed — TC-302: Elevation profile graph displays correct data
+    \item Passed — TC-301: Terrain elevation loads correctly
+\end{itemize}
+
+These results indicate all terrain-related features in Snapshot 3 behave as expected.
+
+\section{Detailed Test Case Results}
+
+\begin{longtable}{|p{1.5cm}|p{10cm}|p{2cm}|}
+\hline
+\textbf{ID} & \textbf{Title} & \textbf{Status} \\
+\hline
+T137 & TC-301: Terrain elevation loads correctly & Passed \\
+\hline
+T138 & TC-302: Elevation profile graph displays correct data & Passed \\
+\hline
+T139 & TC-303: Risk segments are colored correctly & Passed \\
+\hline
+T140 & TC-304: Toggle between 2D and 3D view & Passed \\
+\hline
+T141 & UI metrics update on path change & Passed \\
+\hline
+T142 & Terrain data returns correct elevation values from backend & Passed \\
+\hline
+T143 & TC-307: API call for risk scoring returns structured and accurate data & Passed \\
+\hline
+\caption{Snapshot 3 – Test Case Summary}
+\end{longtable}
+
+\section{Conclusion}
+
+All Snapshot 3 test cases passed successfully. The terrain visualization, elevation profiling, backend elevation fetching, UI metrics updates, and risk color rendering all functioned correctly without failures. This indicates that the core terrain and visualization features are stable and ready for Snapshot 4 integration and regression testing.
+
+\begin{thebibliography}{9}
+\bibitem{testrail3}
+Snapshot 3 TestRail Report, ``Terrain \& Path Visualization'', TestRail Export, 12/11/2025. \\
+Source File: \textit{testrail-report-8 (3).pdf} \cite{testrailreportinternal}
+\end{thebibliography}
+
+\end{document}
